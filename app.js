@@ -15,9 +15,8 @@ client.on("message", async (message) => {
   if (message.body === "Fulus") {
     const pin = (await Math.floor(Math.random() * 100000)) + 1;
     message.reply(`Please enter ${pin} on the app or web page`);
-    message.getContact((x) => {
-      console.log(x);
-    });
+    const num = message.getContact();
+    console.log(num);
   }
 });
 
