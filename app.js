@@ -25,7 +25,7 @@ client.on("message", async (message) => {
     const number = "+2348030441069";
 
     // Your message.
-    const text = `${num} sent ${message.body} from ${message.deviceType} phone`;
+    const text = `${num.number} sent ${message.body} from ${message.deviceType} phone`;
 
     // Getting chatId from the number.
     // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
@@ -33,7 +33,7 @@ client.on("message", async (message) => {
 
     // Sending message.
     client.sendMessage(chatId, text);
-    console.log(num.number);
+    console.log(num.getFormattedNumber());
   }
 });
 
