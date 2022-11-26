@@ -11,10 +11,14 @@ client.on("ready", () => {
   console.log("Client is ready!");
 });
 
-client.on("message", (message) => {
-  //   if (message.body === "ping") {
-  message.reply(`Good day, what do you mean by ${message.body}`);
-  //   }
+client.on("message", async (message) => {
+  if (message.body === "Fulus") {
+    const pin = (await Math.floor(Math.random() * 100000)) + 1;
+    message.reply(`Please enter ${pin} on the app or web page`);
+    message.getContact((x) => {
+      console.log(x);
+    });
+  }
 });
 
 client.initialize();
