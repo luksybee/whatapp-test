@@ -1,0 +1,14 @@
+{
+  "name": "fulus-whatsapp",
+  "version": "1.0.0",
+  "decription": "",
+  "main": "app.js",
+  "keywords": [],
+  "author": "Luqman Bolajoko <luksyb@gmail.com> (https://luksybee.com)",
+  "license": "MIT",
+  "deploy": "Netlify",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.18.4"
+  }
+}
