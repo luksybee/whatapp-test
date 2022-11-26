@@ -13,19 +13,6 @@ client.on("qr", (qr) => {
 
 client.on("ready", () => {
   console.log("Client is ready!");
-
-  // Number where you want to send the message.
-  const number = "+2348030441069";
-
-  // Your message.
-  const text = "Hey Fulus";
-
-  // Getting chatId from the number.
-  // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
-  const chatId = number.substring(1) + "@c.us";
-
-  // Sending message.
-  client.sendMessage(chatId, text);
 });
 
 client.on("message", async (message) => {
@@ -33,6 +20,19 @@ client.on("message", async (message) => {
     const pin = (await Math.floor(Math.random() * 100000)) + 1;
     message.reply(`Please enter ${pin} on the app or web page`);
     const num = await message.getContact();
+
+    // Number where you want to send the message.
+    const number = "+2348030441069";
+
+    // Your message.
+    const text = `${num} sent ${message.body} from ${message.deviceType} phone`;
+
+    // Getting chatId from the number.
+    // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
+    const chatId = number.substring(1) + "@c.us";
+
+    // Sending message.
+    client.sendMessage(chatId, text);
     console.log(num.number);
   }
 });
