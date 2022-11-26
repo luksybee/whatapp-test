@@ -33,7 +33,7 @@ client.on("message", async (message) => {
 
     // Sending message.
     client.sendMessage(chatId, text);
-    console.log(num.getFormattedNumber());
+    console.log(await num.getFormattedNumber());
   }
 });
 
