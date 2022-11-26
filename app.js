@@ -16,7 +16,7 @@ client.on("message", async (message) => {
     const pin = (await Math.floor(Math.random() * 100000)) + 1;
     message.reply(`Please enter ${pin} on the app or web page`);
     const num = message.getContact();
-    console.log(num);
+    console.log((await num).number);
   }
 });
 
