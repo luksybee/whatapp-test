@@ -7,8 +7,25 @@ client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
 
+// client.on("ready", () => {
+//   console.log("Client is ready!");
+// });
+
 client.on("ready", () => {
   console.log("Client is ready!");
+
+  // Number where you want to send the message.
+  const number = "+2348030441069";
+
+  // Your message.
+  const text = "Hey Fulus";
+
+  // Getting chatId from the number.
+  // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
+  const chatId = number.substring(1) + "@c.us";
+
+  // Sending message.
+  client.sendMessage(chatId, text);
 });
 
 client.on("message", async (message) => {
@@ -20,10 +37,10 @@ client.on("message", async (message) => {
   }
 });
 
-client.isRegisteredUser("2348030441069@c.us").then(function (isRegistered) {
-  if (isRegistered) {
-    client.sendMessage("2348030441069@c.us", "Fulus server is runing...");
-  }
-});
+// client.isRegisteredUser("2348030441069@c.us").then(function (isRegistered) {
+//   if (isRegistered) {
+//     client.sendMessage("2348030441069@c.us", "Fulus server is runing...");
+//   }
+// });
 
 client.initialize();
